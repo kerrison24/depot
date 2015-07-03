@@ -1,5 +1,8 @@
 <%= @product.title %><br>
-<%= @product.description %><br>
+<%= sanitize(@product.description) %><br>
 <%= @product.image_url %><br>
-<%= @product.price %><br>
+<%= number_to_currency(@product.price) %><br>
+<%= link_to 'Edit', edit_product_path(@product) %><br>
+<%= link_to 'Destroy', @product, method: :delete,
+            data: { confirm: "Are you sure?" } %><br>
 <%= link_to "Back", products_path %>

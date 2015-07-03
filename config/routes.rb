@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'store/index'
-
   get 'products' => "products#index"
 
   resources :products
