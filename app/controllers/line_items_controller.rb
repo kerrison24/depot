@@ -21,6 +21,13 @@ class LineItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @line_item = Product.find(line_item_params)
+    @line_item.destroy
+
+    redirect_to @cart
+  end
+
   def line_item_params
     params.require(:line_item).permit(:product_id)
   end
